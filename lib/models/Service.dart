@@ -12,26 +12,30 @@ class Service {
 List<Service> services = [
   Service(
     id: 1,
-    title: "Graphic Design",
-    image: "assets/images/graphic.png",
+    title: "Android Develop\nJava/Kotlin",
+    //image: "assets/images/graphic.png",
+    image: "assets/images/Kotlin.jpg",
     color: Color(0xFFD9FFFC),
   ),
   Service(
     id: 2,
-    title: "Web Design",
-    image: "assets/images/desktop.png",
+    title: "Cross-platform Develop\nFlutter",
+    //image: "assets/images/desktop.png",
+    image: "assets/images/Flutter.png",
     color: Color(0xFFE4FFC7),
   ),
   Service(
     id: 3,
-    title: "UI Design",
-    image: "assets/images/ui.png",
+    title: "Game Develop\nUnity",
+    //image: "assets/images/ui.png",
+    image: "assets/images/Unity.png",
     color: Color(0xFFFFF3DD),
   ),
   Service(
     id: 4,
-    title: "Interaction Design",
-    image: "assets/images/Intreaction_design.png",
+    title: "Reverse Engineering",
+    //image: "assets/images/Intreaction_design.png",
+    image: "assets/images/RE2.png",
     color: Color(0xFFFFE0E0),
   ),
 ];

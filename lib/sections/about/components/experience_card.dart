@@ -18,18 +18,18 @@ class ExperienceCard extends StatelessWidget {
       height: 240,
       width: 255,
       decoration: BoxDecoration(
-        color: Color(0xFFF7E8FF),
+        color: Color(0xFFE8F5FF),
         borderRadius: BorderRadius.circular(10),
       ),
       child: DecoratedBox(
         decoration: BoxDecoration(
-          color: Color(0xFFEDD2FC),
+          color: Color(0xFFD2E6FC),
           borderRadius: BorderRadius.circular(10),
           boxShadow: [
             BoxShadow(
               offset: Offset(0, 3),
               blurRadius: 6,
-              color: Color(0xFFA600FF).withOpacity(0.25),
+              color: Color(0xFF0080FF).withOpacity(0.25),
             ),
           ],
         ),

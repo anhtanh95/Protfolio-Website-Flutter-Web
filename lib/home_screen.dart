@@ -19,7 +19,7 @@ class HomeScreen extends StatelessWidget {
             AboutSection(),
             ServiceSection(),
             RecentWorkSection(),
-            FeedbackSection(),
+            //FeedbackSection(),
             SizedBox(height: kDefaultPadding),
             ContactSection(),
             // This SizeBox just for demo

@@ -10,7 +10,7 @@ class RecentWorkSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top: kDefaultPadding * 6),
+      margin: EdgeInsets.only(top: kDefaultPadding * 2),
       width: double.infinity,
       // just for demo
       // height: 600,
@@ -23,13 +23,13 @@ class RecentWorkSection extends StatelessWidget {
       ),
       child: Column(
         children: [
-          Transform.translate(
+          /*Transform.translate(
             offset: Offset(0, -80),
             child: HireMeCard(),
-          ),
+          ),*/
           SectionTitle(
-            title: "Recent Woorks",
-            subTitle: "My Strong Arenas",
+            title: "My Highligh Projects",
+            subTitle: "My Projects",
             color: Color(0xFFFFB100),
           ),
           SizedBox(height: kDefaultPadding * 1.5),

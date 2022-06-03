@@ -60,13 +60,14 @@ class _ServiceCardState extends State<ServiceCard> {
               ),
               child: Image.asset(
                 services[widget.index].image,
-                fit: BoxFit.fill,
+                fit: BoxFit.contain,
               ),
             ),
             SizedBox(height: kDefaultPadding),
             Text(
               services[widget.index].title,
               style: TextStyle(fontSize: 22),
+              textAlign: TextAlign.center,
             ),
           ],
         ),
