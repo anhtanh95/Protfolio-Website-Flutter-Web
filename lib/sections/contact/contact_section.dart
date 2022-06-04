@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:web_app/components/default_button.dart';
 import 'package:web_app/components/section_title.dart';
 import 'package:web_app/constants.dart';
+//import 'dart:developer' as developer;
 
 import 'components/socal_card.dart';
 
@@ -42,6 +45,7 @@ class ContactBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: 1110,
       constraints: BoxConstraints(maxWidth: 1110),
       margin: EdgeInsets.only(top: kDefaultPadding * 2),
       padding: EdgeInsets.all(kDefaultPadding * 3),
@@ -54,7 +58,18 @@ class ContactBox extends StatelessWidget {
       ),
       child: Column(
         children: [
-          Row(
+          Text("Send me email to: tranleo148@gmail.com"),
+          SizedBox(height: kDefaultPadding * 2),
+          FittedBox(
+            child: DefaultButton(
+              imageSrc: "assets/images/contact_icon.png",
+              text: "Contact Me!",
+              press: () {
+                _launchMailClient("tranleo148@gmail.com");
+              },
+            ),
+          ),
+          /*Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               SocalCard(
@@ -78,10 +93,20 @@ class ContactBox extends StatelessWidget {
             ],
           ),
           SizedBox(height: kDefaultPadding * 2),
-          ContactForm(),
+          ContactForm(),*/
         ],
       ),
     );
+  }
+
+  void _launchMailClient(String kEmail) async {
+    try {
+      //developer.log('log me', name: 'my.app.category');
+      await launch('mailto:$kEmail');
+    } catch (e) {
+      await Clipboard.setData(ClipboardData(text: '$kEmail'));
+      // _emailCopiedToClipboard = true;
+    }
   }
 }
 

@@ -1,34 +1,42 @@
 class RecentWork {
-  final String image, category, title;
+  final String image, category, title, subTitle, link;
   final int id;
 
-  RecentWork({this.id, this.image, this.category, this.title});
+  RecentWork({this.id, this.image, this.category, this.title, this.subTitle, this.link});
 }
 
 // Demo List of my works
 List<RecentWork> recentWorks = [
   RecentWork(
     id: 1,
-    title: "New & Fresh Looking Portfolio indeed at the end",
-    category: "Graphic Design",
-    image: "assets/images/work_1.png",
+    title: "FPT Play",
+    subTitle: "An application that helps customers of FPT Telecom to watch online TV content, feature films, sports, events,... like Netflix.",
+    category: "Android Project",
+    image: "assets/images/FPTPlay.jpg",
+    link: "https://play.google.com/store/apps/details?id=com.fplay.activity"
   ),
   RecentWork(
     id: 2,
-    title: "New & Fresh Looking Portfolio indeed at the end",
-    category: "Graphic Design",
-    image: "assets/images/work_2.png",
+    title: "Genshin Codex",
+    subTitle: "A wiki application for gamer of Genshin Impact game, building with Flutter.",
+    category: "Flutter Project",
+    image: "assets/images/GCodex.jpg",
+    link: ""
   ),
   RecentWork(
     id: 3,
-    title: "New & Fresh Looking Portfolio indeed at the end",
-    category: "Graphic Design",
-    image: "assets/images/work_3.png",
+    title: "Foxy TV",
+    subTitle: "An application that helps customers of FPT Television to watch online TV content, feature films, sports, events,... like Netflix.",
+    category: "Android Project",
+    image: "assets/images/Foxy.png",
+    link: "https://play.google.com/store/apps/details?id=vn.fpt.truyenhinh.foxy&hl=vi&gl=US"
   ),
   RecentWork(
     id: 4,
-    title: "New & Fresh Looking Portfolio indeed at the end",
-    category: "Graphic Design",
-    image: "assets/images/work_4.png",
+    title: "Hydrelis",
+    subTitle: "An application to control water valve via wifi (IOT device)",
+    category: "Android Project",
+    image: "assets/images/Hydrelis.png",
+    link: "https://play.google.com/store/apps/details?id=com.hydrelis.stopflow"
   ),
 ];

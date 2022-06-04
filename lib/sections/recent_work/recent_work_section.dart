@@ -36,8 +36,9 @@ class RecentWorkSection extends StatelessWidget {
           SizedBox(
             width: 1110,
             child: Wrap(
-              spacing: kDefaultPadding,
+              //spacing: kDefaultPadding,
               runSpacing: kDefaultPadding * 2,
+              alignment: WrapAlignment.spaceBetween,
               children: List.generate(
                 recentWorks.length,
                 (index) => RecentWorkCard(index: index, press: () {}),

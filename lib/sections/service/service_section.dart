@@ -18,11 +18,20 @@ class ServiceSection extends StatelessWidget {
             title: "My Major SKills",
             subTitle: "My Skills",
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          SizedBox(
+            width: 1110,
+            child: Wrap(
+              alignment: WrapAlignment.spaceBetween,
+              //spacing: (1110 - (256 * 4)) / 3,
+              children: List.generate(
+                  services.length, (index) => ServiceCard(index: index)),
+            ),
+          ),
+          /*Wrap(spacing: 20,
+            //mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: List.generate(
                 services.length, (index) => ServiceCard(index: index)),
-          )
+          )*/
         ],
       ),
     );

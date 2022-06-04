@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:web_app/models/RecentWork.dart';
 
+import 'package:url_launcher/url_launcher.dart';
+
 import '../../../constants.dart';
 
 class RecentWorkCard extends StatefulWidget {
@@ -40,7 +42,26 @@ class _RecentWorkCardState extends State<RecentWorkCard> {
         ),
         child: Row(
           children: [
-            Image.asset(recentWorks[widget.index].image),
+            //Image.asset(recentWorks[widget.index].image, width: 180, fit: BoxFit.fill),
+            Container(
+              width: 180,
+              decoration: BoxDecoration(
+                color: Color(0xFFD2E6FC),
+                //borderRadius: BorderRadius.vertical(top: Radius.circular(10), bottom: Radius.zero),
+                borderRadius: BorderRadius.circular(10),
+                boxShadow: [
+                  BoxShadow(
+                    offset: Offset(0, 3),
+                    blurRadius: 6,
+                    color: Color(0xFF0080FF).withOpacity(0.25),
+                  ),
+                ],
+                image: DecorationImage(
+                  fit: BoxFit.fill,
+                  image: AssetImage(recentWorks[widget.index].image),
+                ),
+              ),
+            ),
             Expanded(
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: kDefaultPadding),
@@ -58,10 +79,20 @@ class _RecentWorkCardState extends State<RecentWorkCard> {
                           .copyWith(height: 1.5),
                     ),
                     SizedBox(height: kDefaultPadding),
-                    Text(
-                      "View Details",
-                      style: TextStyle(decoration: TextDecoration.underline),
-                    )
+                    Text(recentWorks[widget.index].subTitle),
+                    SizedBox(height: kDefaultPadding),
+                    if (recentWorks[widget.index].id == 2)
+                      Text("Status: In development")
+                    else
+                      TextButton(
+                        onPressed: () {
+                          _openLink(recentWorks[widget.index].link);
+                        },
+                        child: Text(
+                          "Store Link",
+                          style: TextStyle(decoration: TextDecoration.underline),
+                        ),
+                      )
                   ],
                 ),
               ),
@@ -70,5 +101,12 @@ class _RecentWorkCardState extends State<RecentWorkCard> {
         ),
       ),
     );
+  }
+
+  void _openLink(String link) async {
+    try {
+      await launch(link);
+    } catch (e) {
+    }
   }
 }
