@@ -2,7 +2,13 @@ class RecentWork {
   final String image, category, title, subTitle, link;
   final int id;
 
-  RecentWork({this.id, this.image, this.category, this.title, this.subTitle, this.link});
+  RecentWork(
+      {required this.id,
+      required this.image,
+      required this.category,
+      required this.title,
+      required this.subTitle,
+      required this.link});
 }
 
 // Demo List of my works

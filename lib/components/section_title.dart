@@ -4,10 +4,10 @@ import '../constants.dart';
 
 class SectionTitle extends StatelessWidget {
   const SectionTitle({
-    Key key,
-    this.title,
-    this.subTitle,
-    this.color,
+    Key? key,
+    required this.title,
+    required this.subTitle,
+    required this.color,
   }) : super(key: key);
 
   final String title, subTitle;
@@ -47,7 +47,7 @@ class SectionTitle extends StatelessWidget {
                 style: Theme.of(context)
                     .textTheme
                     .headline2
-                    .copyWith(fontWeight: FontWeight.bold, color: Colors.black),
+                    ?.copyWith(fontWeight: FontWeight.bold, color: Colors.black),
               )
             ],
           )
