@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:web_app/responsive.dart';
 
 import '../constants.dart';
 
@@ -42,13 +43,25 @@ class SectionTitle extends StatelessWidget {
                 style:
                     TextStyle(fontWeight: FontWeight.w200, color: kTextColor),
               ),
-              Text(
+              Responsive(desktop: Text(
                 title,
                 style: Theme.of(context)
                     .textTheme
                     .headline2
                     ?.copyWith(fontWeight: FontWeight.bold, color: Colors.black),
-              )
+              ), tablet: Text(
+                title,
+                style: Theme.of(context)
+                    .textTheme
+                    .headline2
+                    ?.copyWith(fontWeight: FontWeight.bold, color: Colors.black),
+              ), mobile: Text(
+                title,
+                style: Theme.of(context)
+                    .textTheme
+                    .headline3
+                    ?.copyWith(fontWeight: FontWeight.bold, color: Colors.blue, fontSize: 10),
+              ))
             ],
           )
         ],

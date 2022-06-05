@@ -13,10 +13,11 @@ class ExperienceCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: kDefaultPadding),
+      //margin: EdgeInsets.symmetric(horizontal: kDefaultPadding),
       padding: EdgeInsets.all(kDefaultPadding),
-      height: 240,
-      width: 255,
+      height: 220,
+      width: 230,
+      constraints: BoxConstraints(maxWidth: 255, minWidth: 144),
       decoration: BoxDecoration(
         color: Color(0xFFE8F5FF),
         borderRadius: BorderRadius.circular(10),
