@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:web_app/constants.dart';
 
@@ -28,7 +26,11 @@ class TopSection extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            GlassContent(size: size),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
+              child: GlassContent(size: size),
+            ),
+            SizedBox(height: kDefaultPadding),
             PersonPic(),
             //Align(alignment: Alignment.bottomCenter, child: GlassContent(size: size)),
             //Align(alignment: Alignment.bottomCenter, child: PersonPic()),
