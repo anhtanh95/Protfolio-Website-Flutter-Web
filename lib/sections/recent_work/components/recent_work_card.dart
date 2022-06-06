@@ -123,6 +123,7 @@ class _RecentWorkCardState extends State<RecentWorkCard> {
   Widget _miniMobileWidget() {
     return Column(
       children: [
+        SizedBox(height: kDefaultPadding / 2),
         Text(recentWorks[widget.index].category.toUpperCase()),
         //SizedBox(height: kDefaultPadding / 2),
         Text(

@@ -23,16 +23,19 @@ class ContactSection extends StatelessWidget {
           image: AssetImage("assets/images/bg_img_2.png"),
         ),
       ),
-      child: Column(
-        children: [
-          SizedBox(height: kDefaultPadding * 2.5),
-          SectionTitle(
-            title: CONTACT_SECTION_NAME,
-            subTitle: CONTACT_SECTION_DES,
-            color: Color(0xFF07E24A),
-          ),
-          ContactBox()
-        ],
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
+        child: Column(
+          children: [
+            SizedBox(height: kDefaultPadding * 2.5),
+            SectionTitle(
+              title: CONTACT_SECTION_NAME,
+              subTitle: CONTACT_SECTION_DES,
+              color: Color(0xFF07E24A),
+            ),
+            ContactBox()
+          ],
+        ),
       ),
     );
   }
@@ -48,8 +51,8 @@ class ContactBox extends StatelessWidget {
     return Container(
       width: 1110,
       constraints: BoxConstraints(maxWidth: 1110),
-      margin: EdgeInsets.only(top: kDefaultPadding * 2),
-      padding: EdgeInsets.all(kDefaultPadding * 3),
+      //margin: EdgeInsets.only(top: kDefaultPadding * 2),
+      padding: EdgeInsets.all(kDefaultPadding),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.only(
@@ -60,7 +63,7 @@ class ContactBox extends StatelessWidget {
       child: Column(
         children: [
           Text("Send me email to: tranleo148@gmail.com"),
-          SizedBox(height: kDefaultPadding * 2),
+          SizedBox(height: kDefaultPadding),
           FittedBox(
             child: DefaultButton(
               imageSrc: "assets/images/contact_icon.png",
@@ -103,7 +106,7 @@ class ContactBox extends StatelessWidget {
   void _launchMailClient(String kEmail) async {
     try {
       //developer.log('log me', name: 'my.app.category');
-      await launch('mailto:$kEmail');
+      await launchUrl(Uri.parse('mailto:$kEmail'));
     } catch (e) {
       await Clipboard.setData(ClipboardData(text: '$kEmail'));
       // _emailCopiedToClipboard = true;
