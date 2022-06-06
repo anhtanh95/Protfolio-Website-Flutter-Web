@@ -3,6 +3,7 @@ import 'package:web_app/components/section_title.dart';
 import 'package:web_app/constants.dart';
 import 'package:web_app/models/Service.dart';
 
+import '../../string.dart';
 import 'components/service_card.dart';
 
 class ServiceSection extends StatelessWidget {
@@ -17,8 +18,8 @@ class ServiceSection extends StatelessWidget {
           children: [
             SectionTitle(
               color: Color(0xFFFF0000),
-              title: "My Major Skills",
-              subTitle: "My Skills",
+              title: SERVICE_SECTION_NAME,
+              subTitle: SERVICE_SECTION_DES,
             ),
             SizedBox(
               width: 1110,

@@ -4,6 +4,7 @@ import 'package:web_app/components/section_title.dart';
 import 'package:web_app/constants.dart';
 import 'package:web_app/models/RecentWork.dart';
 
+import '../../string.dart';
 import 'components/recent_work_card.dart';
 
 class RecentWorkSection extends StatelessWidget {
@@ -21,32 +22,35 @@ class RecentWorkSection extends StatelessWidget {
           image: AssetImage("assets/images/recent_work_bg.png"),
         ),
       ),
-      child: Column(
-        children: [
-          /*Transform.translate(
-            offset: Offset(0, -80),
-            child: HireMeCard(),
-          ),*/
-          SectionTitle(
-            title: "My Highligh Projects",
-            subTitle: "My Projects",
-            color: Color(0xFFFFB100),
-          ),
-          SizedBox(height: kDefaultPadding * 1.5),
-          SizedBox(
-            width: 1110,
-            child: Wrap(
-              //spacing: kDefaultPadding,
-              runSpacing: kDefaultPadding * 2,
-              alignment: WrapAlignment.spaceBetween,
-              children: List.generate(
-                recentWorks.length,
-                (index) => RecentWorkCard(index: index, press: () {}),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
+        child: Column(
+          children: [
+            /*Transform.translate(
+              offset: Offset(0, -80),
+              child: HireMeCard(),
+            ),*/
+            SectionTitle(
+              title: WORK_SECTION_NAME,
+              subTitle: WORK_SECTION_DES,
+              color: Color(0xFFFFB100),
+            ),
+            SizedBox(height: kDefaultPadding * 1.5),
+            SizedBox(
+              width: 1110,
+              child: Wrap(
+                //spacing: kDefaultPadding,
+                runSpacing: kDefaultPadding * 2,
+                alignment: WrapAlignment.spaceBetween,
+                children: List.generate(
+                  recentWorks.length,
+                  (index) => RecentWorkCard(index: index, press: () {}),
+                ),
               ),
             ),
-          ),
-          SizedBox(height: kDefaultPadding * 5),
-        ],
+            SizedBox(height: kDefaultPadding * 5),
+          ],
+        ),
       ),
     );
   }

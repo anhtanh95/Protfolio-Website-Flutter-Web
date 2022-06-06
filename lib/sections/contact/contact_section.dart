@@ -4,6 +4,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:web_app/components/default_button.dart';
 import 'package:web_app/components/section_title.dart';
 import 'package:web_app/constants.dart';
+import 'package:web_app/string.dart';
 //import 'dart:developer' as developer;
 
 import 'components/socal_card.dart';
@@ -26,8 +27,8 @@ class ContactSection extends StatelessWidget {
         children: [
           SizedBox(height: kDefaultPadding * 2.5),
           SectionTitle(
-            title: "Contact Me",
-            subTitle: "For Project inquiry and information",
+            title: CONTACT_SECTION_NAME,
+            subTitle: CONTACT_SECTION_DES,
             color: Color(0xFF07E24A),
           ),
           ContactBox()
